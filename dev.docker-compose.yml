@@ -1,5 +1,6 @@
 services:
-  scrapper:
+  scraper:
+    container_name: scrape-your-value-dev
     build: .
     volumes:
       - ./data:/app/data
