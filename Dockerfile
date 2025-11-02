@@ -3,5 +3,4 @@ RUN apk add --no-cache bash curl jq yq
 WORKDIR /app
 COPY /scripts ./scripts
 RUN chmod +x /app/scripts/*.sh
-# USER 1000:1000
-ENTRYPOINT ["crond", "-f"]
+ENTRYPOINT ["sh", "/app/scripts/startup.sh"]

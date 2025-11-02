@@ -1,10 +1,10 @@
 services:
   scrape-your-value:
-    image: ghcr.io/xavierdupuis/scrape-your-value:main
+    image: ghcr.io/xavierdupuis/scrapeyourvalue:main
     container_name: scrape-your-value
     restart: always
-    env_file:
-      - .env
+    environment:
+      - CRON_SCHEDULE=${CRON_SCHEDULE:?Missing variable CRON_SCHEDULE}
     volumes:
       - ./data:/app/data
       - ./config:/app/config
