@@ -4,7 +4,7 @@ Monitors endpoints reponses from various websites and sends notifications when v
 
 ## Deployment
 
-1. Get the .env file
+1. Download
    ```bash
     mkdir config
     wget -O config/config.yml https://raw.githubusercontent.com/XavierDupuis/ScrapeYourValue/refs/heads/main/config.yml.template
@@ -29,5 +29,6 @@ docker-compose -f dev.docker-compose.yml up --build
 ```
 
 ## License 📄
+
 
 See [LICENSE](LICENSE) file for details.
