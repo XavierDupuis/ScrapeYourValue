@@ -1,0 +1,10 @@
+services:
+  scrapper:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+      - /etc/localtime:/etc/localtime:ro
+    env_file: 
+      - .env
+    entrypoint: ["/bin/sh", "/app/scripts/startup.sh"]

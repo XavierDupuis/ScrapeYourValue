@@ -1,0 +1,11 @@
+services:
+  scrape-your-value:
+    image: ghcr.io/xavierdupuis/scrape-your-value:main
+    container_name: scrape-your-value
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+      - /etc/localtime:/etc/localtime:ro
