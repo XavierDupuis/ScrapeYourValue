@@ -1,5 +1,4 @@
-# ScrapeYourPrice
-
+# ScrapeYourValue
 Monitors endpoints reponses from various websites and sends notifications when values change.
 
 ## Deployment
@@ -28,7 +27,8 @@ For development, use:
 docker-compose -f dev.docker-compose.yml up --build
 ```
 
-## License 📄
+## License
 
 
 See [LICENSE](LICENSE) file for details.
+
