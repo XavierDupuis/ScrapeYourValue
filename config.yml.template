@@ -1,11 +1,20 @@
-pull:
-  - target: "https://www.example.com/products/my-awesome-product-details.js"
-    description: "My Awesome Product"
-    response:
-      type: "JSON"
-      path: "price"
-
-push: 
-  - target: "https://discord.com/api/webhooks/..."
-    description: "Discord Notification"
-    message: "The price for **My Awesome Product** has changed to **{{value}}**! Check it out [here](https://www.example.com/products/my-awesome-product-details)"
+targets:
+  - name: "my-awesome-product"
+    pull:
+      target: "https://www.example.com/products/my-awesome-product-details.js"
+      response:
+        type: "JSON"
+        path: "price"
+    push:
+        target: "https://discord.com/api/webhooks/..."
+        message: "The price for **My Awesome Product** has changed to **{{value}}**! Check it out [here](https://www.example.com/products/my-awesome-product-details)."
+  
+  - name: "another-product"
+    pull:
+      target: "https://www.example.com/products/another-product-details.js"
+      response:
+        type: "JSON"
+        path: "price"
+    push:
+        target: "https://discord.com/api/webhooks/..."
+        message: "The price for **Another Product** has changed to **{{value}}**! Check it out [here](https://www.example.com/products/another-product-details)."
