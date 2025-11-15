@@ -11,7 +11,11 @@ fi
 
 log "Setting up CRON job"
 CRON_JOB="$CRON_SCHEDULE /app/scripts/check_and_update.sh"
-{ crontab -l 2>/dev/null; echo "$CRON_JOB"; } | crontab -
+
+# Clear existing crontab to prevent duplicates
+crontab -r 2>/dev/null || true
+
+echo "$CRON_JOB" | crontab -
 
 log "Current CRON jobs:"
 crontab -l
